@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -86,6 +87,15 @@ public class MainActivity extends Activity implements OnClickListener {
 		if(v.getId() == R.id.butGo)
 			this.clickGo();
 		
+	}
+	
+	@Override
+	public void onBackPressed() {
+		if(this.wvShow.canGoBack()){
+			this.wvShow.goBack();
+			return;
+		}
+			
 	}
 
 }
